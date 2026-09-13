@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MANII VLOGX</title>
+    <style>
+        body {
+            background-color: #fdf6ec;
+            font-family: Arial;
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #d1495b;
+            font-size: 48px;
+        }
+
+        h2 {
+            color: #2c3e50;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #d1495b;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input {
+            padding: 8px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>MANII VLOGX</h1>
+    <p>Kota coaching reviews, IIT-JEE/NEET student life & real stories.</p>
+
+    <h2>About the Channel</h2>
+    <p>I create honest reviews of Kota coaching institutes and share real student experiences to help future JEE/NEET aspirants make better decisions.
+         🎯 Helping Students with IIT-JEE | NEET | Competitive Exams Reality  
+🎙️Podcasts with your fav Educators & Toppers 
+📍 Real insights on Kota Coaching, & Student Life  </p>
+
+    <h2>What You'll Find Here</h2>
+    <ul>
+        <li>Coaching institute reviews</li>
+        <li>Study Strategy & Tips</li>
+        <li>Scholarship Updates & many more...</li>
+        <li>Student interviews</li>
+        <li>Day-in-the-life vlogs</li>
+    </ul>
+
+    <a href="https://www.youtube.com/@maniivlogx">Subscribe on YouTube</a>
+
+    <button onclick="sayHello()">Say Hi 👋</button>
+
+    <h2>Say Hello!</h2>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <button onclick="greetVisitor()">Say Hi</button>
+
+    <h2>Contact Me</h2>
+    <input type="text" id="visitorName" placeholder="Your name">
+    <input type="email" id="visitorEmail" placeholder="Your email">
+    <button onclick="submitForm()">Submit</button>
+
+    <script>
+        function sayHello() {
+            alert("Thanks for visiting MANII VLOGX!");
+        }
+
+        function greetVisitor() {
+            let userName = document.getElementById("nameInput").value;
+            if (userName === "") {
+                alert("Please enter your name first!");
+            } else {
+                alert("Hello, " + userName + "! Thanks for visiting MANII VLOGX!");
+            }
+        }
+
+        function submitForm() {
+            let name = document.getElementById("visitorName").value;
+            let email = document.getElementById("visitorEmail").value;
+
+            if (name === "" || email === "") {
+                alert("Please fill both fields!");
+            } else {
+                alert("Thanks " + name + "! We'll contact you at " + email);
+            }
+        }
+    </script>
+</body>
+</html>
+<h2>Recent Video Topics</h2>
+<ul id="topicsList"></ul>
+
+<script>
+    let topics = ["Allen Kota Review", "Resonance vs Motion", "Day in Life of a JEE Student", "Scholarship Guide"];
+
+    for (let i = 0; i < topics.length; i++) {
+        let listItem = document.createElement("li");
+        listItem.innerHTML = topics[i];
+        document.getElementById("topicsList").appendChild(listItem);
+    }
+</script>

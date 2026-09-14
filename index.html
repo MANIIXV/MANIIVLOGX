@@ -118,7 +118,7 @@
             background-color: #1a2531;
         }
 
-        input {
+        input, textarea {
             display: block;
             width: 100%;
             padding: 10px;
@@ -126,6 +126,12 @@
             margin-top: 10px;
             border: 1px solid #ccc;
             border-radius: 6px;
+            font-family: Arial, sans-serif;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
         }
 
         #quoteText {
@@ -134,7 +140,6 @@
             margin-top: 15px;
         }
 
-        /* Mobile-specific adjustments (screens narrower than 600px) */
         @media (max-width: 600px) {
             body {
                 padding: 20px 12px;
@@ -195,6 +200,16 @@
     </div>
 
     <div class="section">
+        <h2>🎙️ Podcast With Us</h2>
+        <p>Are you a faculty member, educator, or part of the education sector? We'd love to have you as a guest on our podcast to share your journey and insights with our student audience.</p>
+        <input type="text" id="podcastName" placeholder="Your name">
+        <input type="text" id="podcastRole" placeholder="Your role / institute (e.g. Faculty at Allen)">
+        <input type="text" id="podcastContact" placeholder="Phone or email">
+        <textarea id="podcastMessage" placeholder="Tell us a bit about yourself / topic you'd like to discuss"></textarea>
+        <button onclick="submitPodcastForm()">Request to Collaborate</button>
+    </div>
+
+    <div class="section">
         <h2>Contact Me</h2>
         <input type="text" id="visitorName" placeholder="Your name">
         <input type="email" id="visitorEmail" placeholder="Your email">
@@ -216,6 +231,19 @@
                 alert("Please fill both fields!");
             } else {
                 alert("Thanks " + name + "! We'll contact you at " + email);
+            }
+        }
+
+        function submitPodcastForm() {
+            let name = document.getElementById("podcastName").value;
+            let role = document.getElementById("podcastRole").value;
+            let contact = document.getElementById("podcastContact").value;
+            let message = document.getElementById("podcastMessage").value;
+
+            if (name === "" || contact === "") {
+                alert("Please fill in your name and contact details!");
+            } else {
+                alert("Thank you, " + name + "! We'll reach out to you soon regarding the podcast collaboration.");
             }
         }
 

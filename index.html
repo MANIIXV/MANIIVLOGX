@@ -543,6 +543,30 @@
         }
 
     </style>
+    .brand-header {
+        width: 100%;
+        background: #000;
+        overflow: hidden;
+        line-height: 0;
+    }
+
+    .brand-header img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+        .brand-header img {
+            min-height: 180px;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+</style>
+    
 </head>
 
 <body>

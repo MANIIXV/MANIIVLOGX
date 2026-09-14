@@ -3,6 +3,8 @@
 <head>
     <title>MANII VLOGX</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -10,21 +12,82 @@
 
         body {
             background-color: #fdf6ec;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', Arial, sans-serif;
             text-align: center;
-            padding: 40px 20px;
             margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #2c3e50;
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #f0a8b0;
+        }
+
+        .hero {
+            padding: 60px 20px 40px 20px;
         }
 
         h1 {
             color: #d1495b;
             font-size: 48px;
             margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #555;
+            max-width: 500px;
+            margin: 10px auto;
         }
 
         h2 {
             color: #2c3e50;
             margin-top: 0;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin: 20px auto 40px auto;
+        }
+
+        .stat-box {
+            background: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+        .stat-box .number {
+            font-size: 24px;
+            font-weight: 700;
+            color: #d1495b;
+        }
+
+        .stat-box .label {
+            font-size: 13px;
+            color: #666;
         }
 
         .section {
@@ -112,6 +175,7 @@
             transition: background-color 0.2s ease;
             width: 100%;
             max-width: 200px;
+            font-family: 'Poppins', Arial, sans-serif;
         }
 
         button:hover {
@@ -126,7 +190,7 @@
             margin-top: 10px;
             border: 1px solid #ccc;
             border-radius: 6px;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', Arial, sans-serif;
         }
 
         textarea {
@@ -140,9 +204,23 @@
             margin-top: 15px;
         }
 
+        footer {
+            background-color: #2c3e50;
+            color: #ccc;
+            padding: 25px 20px;
+            margin-top: 50px;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #f0a8b0;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
         @media (max-width: 600px) {
-            body {
-                padding: 20px 12px;
+            .hero {
+                padding: 40px 15px 20px 15px;
             }
 
             h1 {
@@ -166,14 +244,45 @@
             button {
                 max-width: 100%;
             }
+
+            .stats {
+                gap: 15px;
+            }
+
+            nav {
+                gap: 12px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>MANII VLOGX</h1>
-    <p>Kota coaching reviews, IIT-JEE/NEET student life & real stories.</p>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#podcast">Podcast</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-    <div class="section">
+    <div class="hero">
+        <h1>MANII VLOGX</h1>
+        <p>Kota coaching reviews, IIT-JEE/NEET student life & real stories.</p>
+
+        <div class="stats">
+            <div class="stat-box">
+                <div class="number">21K+</div>
+                <div class="label">Subscribers</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">300+</div>
+                <div class="label">Videos</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">& Many More</div>
+                <div class="label">Coming Soon</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="about">
         <h2>About the Channel</h2>
         <p>
             🎯 Helping Students with IIT-JEE | NEET | Competitive Exams Reality<br>
@@ -199,7 +308,7 @@
         </div>
     </div>
 
-    <div class="section">
+    <div class="section" id="podcast">
         <h2>🎙️ Podcast With Us</h2>
         <p>Are you a faculty member, educator, or part of the education sector? We'd love to have you as a guest on our podcast to share your journey and insights with our student audience.</p>
         <input type="text" id="podcastName" placeholder="Your name">
@@ -209,7 +318,7 @@
         <button onclick="submitPodcastForm()">Request to Collaborate</button>
     </div>
 
-    <div class="section">
+    <div class="section" id="contact">
         <h2>Contact Me</h2>
         <input type="text" id="visitorName" placeholder="Your name">
         <input type="email" id="visitorEmail" placeholder="Your email">
@@ -221,6 +330,15 @@
         <button onclick="getQuote()">Get a Quote</button>
         <p id="quoteText"></p>
     </div>
+
+    <footer>
+        <p>© 2026 MANII VLOGX. All rights reserved.</p>
+        <p>
+            <a href="https://www.youtube.com/@maniivlogx">YouTube</a> |
+            <a href="https://www.instagram.com/maniivlogx" target="_blank">Instagram</a> |
+            <a href="https://www.facebook.com/maniivlogx" target="_blank">Facebook</a>
+        </p>
+    </footer>
 
     <script>
         function submitForm() {
@@ -236,9 +354,7 @@
 
         function submitPodcastForm() {
             let name = document.getElementById("podcastName").value;
-            let role = document.getElementById("podcastRole").value;
             let contact = document.getElementById("podcastContact").value;
-            let message = document.getElementById("podcastMessage").value;
 
             if (name === "" || contact === "") {
                 alert("Please fill in your name and contact details!");

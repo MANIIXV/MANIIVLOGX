@@ -423,39 +423,22 @@
 
         form { display: grid; gap: 12px; }
 
-        form label {
-            display: block;
-            margin: 2px 0 -5px;
-            color: #1e2732 !important;
-            font-size: 13px;
-            font-weight: 600;
-        }
-
         input, textarea {
             width: 100%;
             border: 1px solid #cfd6dc;
             border-radius: 9px;
-            background: #ffffff !important;
+            background: #ffffff;
             color: #1e2732 !important;
-            -webkit-text-fill-color: #1e2732 !important;
+            -webkit-text-fill-color: #1e2732;
             padding: 14px;
             font: inherit;
             outline: none;
             caret-color: #1e2732;
-            opacity: 1 !important;
         }
 
         input::placeholder, textarea::placeholder {
             color: #718096 !important;
-            -webkit-text-fill-color: #718096 !important;
-            opacity: 1 !important;
-        }
-
-        input:-webkit-autofill,
-        input:-webkit-autofill:hover,
-        input:-webkit-autofill:focus {
-            -webkit-text-fill-color: #1e2732 !important;
-            box-shadow: 0 0 0 1000px #ffffff inset !important;
+            opacity: 1;
         }
 
         input:focus, textarea:focus {
@@ -509,64 +492,7 @@
             .card, .podcast-box { padding: 23px; }
             .footer-inner { flex-direction: column; text-align: center; }
         }
-    
-        /* FINAL FORM VISIBILITY FIX */
-        #contact input:not([type="hidden"]),
-        #contact textarea {
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-            background-color: #ffffff !important;
-            color: #17202a !important;
-            -webkit-text-fill-color: #17202a !important;
-            caret-color: #17202a !important;
-            font-family: Arial, sans-serif !important;
-            font-size: 16px !important;
-            line-height: 1.4 !important;
-            text-shadow: none !important;
-            -webkit-appearance: none !important;
-        }
-
-        #contact input:not([type="hidden"])::placeholder,
-        #contact textarea::placeholder {
-            color: #667085 !important;
-            -webkit-text-fill-color: #667085 !important;
-            opacity: 1 !important;
-        }
-
-        #contact input:not([type="hidden"]):focus,
-        #contact textarea:focus {
-            color: #17202a !important;
-            -webkit-text-fill-color: #17202a !important;
-            background-color: #ffffff !important;
-            border-color: #b51f35 !important;
-        }
-
     </style>
-    .brand-header {
-        width: 100%;
-        background: #000;
-        overflow: hidden;
-        line-height: 0;
-    }
-
-    .brand-header img {
-        width: 100%;
-        height: auto;
-        display: block;
-        object-fit: cover;
-    }
-
-    /* Mobile */
-    @media (max-width: 768px) {
-        .brand-header img {
-            min-height: 180px;
-            object-fit: cover;
-            object-position: center;
-        }
-    }
-</style>
-    
 </head>
 
 <body>
@@ -583,13 +509,7 @@
         </div>
     </div>
 </nav>
-<!-- MANII VLOGX Header Banner -->
-<section class="brand-header">
-    <img
-        src="maniivlogx-header.jpg"
-        alt="MANII VLOGX - Voice of Aspirants & Education Ecosystem"
-    >
-</section>
+
 <main id="home">
 
     <section class="hero">
@@ -844,20 +764,11 @@
                         <input type="hidden" name="_captcha" value="true">
                         <input type="hidden" name="_template" value="table">
                         <input type="hidden" name="_next" value="https://maniixv.github.io/MANIIVLOGX/thank-you.html">
-                        <input type="text" name="_honey" style="display:none !important">
-
-                        <label for="enquiry-name">Your Name</label>
-                        <input id="enquiry-name" name="name" type="text" placeholder="Enter your name" autocomplete="name" required style="color:#17202a !important; -webkit-text-fill-color:#17202a !important; background:#fff !important; caret-color:#17202a !important;">
-
-                        <label for="enquiry-email">Email Address</label>
-                        <input id="enquiry-email" name="email" type="email" placeholder="Enter your email" autocomplete="email" required style="color:#17202a !important; -webkit-text-fill-color:#17202a !important; background:#fff !important; caret-color:#17202a !important;">
-
-                        <label for="enquiry-subject">Collaboration / Enquiry</label>
-                        <input id="enquiry-subject" name="subject" type="text" placeholder="e.g. Brand collaboration, event coverage" required style="color:#17202a !important; -webkit-text-fill-color:#17202a !important; background:#fff !important; caret-color:#17202a !important;">
-
-                        <label for="enquiry-message">Message</label>
-                        <textarea id="enquiry-message" name="message" placeholder="Tell us about your requirement..." required style="color:#17202a !important; -webkit-text-fill-color:#17202a !important; background:#fff !important; caret-color:#17202a !important;"></textarea>
-
+                        <input type="text" name="_honey" style="display:none">
+                        <input name="name" type="text" placeholder="Your name" required>
+                        <input name="email" type="email" placeholder="Your email" required>
+                        <input name="subject" type="text" placeholder="What would you like to collaborate on?" required>
+                        <textarea name="message" placeholder="Tell us a little about your requirement..." required></textarea>
                         <button class="btn btn-primary" type="submit">Send Enquiry</button>
                     </form>
                 </div>
